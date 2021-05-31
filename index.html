@@ -7,14 +7,24 @@
     <title>Personal Portfolio Website</title>
     <!-- font awesome -->
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <!--main css-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- default screen color-->
+    <!-- default skin color-->
     <link rel="stylesheet" type="text/css" href="css/skins/color_1.css">
+    <!-- style switcher -->
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-1" href="css/skins/color_1.css" >
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-2" href="css/skins/color_2.css" disabled>
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-3" href="css/skins/color_3.css" disabled>
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-4" href="css/skins/color_4.css" disabled>
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-5" href="css/skins/color_5.css" disabled>
+
+    <link rel="stylesheet" type="text/css" href="css/style-switcher.css">
 
 
 </head>
-<body>
+<body class="dark">
     <!--header start-->
     <header class="header">
         <div class="container">
@@ -35,21 +45,23 @@
         <div class="close-nav-menu outer-shadow hover-in-shadow">&times;</div>
         <div class="nav-menu-inner">
             <ul>
-                <li><a href="#" class="inner-shadow active">Home</a></li>
-                <li><a href="#" class="outer-shadow hover-in-shadow">About</a></li>
-                <li><a href="#" class="outer-shadow hover-in-shadow">Services</a></li>
-                <li><a href="#" class="outer-shadow hover-in-shadow">Portfolio</a></li>
-                <li><a href="#" class="outer-shadow hover-in-shadow">Testimonials</a></li>
-                <li><a href="#" class="outer-shadow hover-in-shadow">Contact</a></li>
+                <li><a href="#home" class="link-item inner-shadow active">Home</a></li>
+                <li><a href="#about" class="link-item outer-shadow hover-in-shadow">About</a></li>
+                <li><a href="#services" class="link-item outer-shadow hover-in-shadow">Services</a></li>
+                <li><a href="#portfolio" class="link-item outer-shadow hover-in-shadow">Portfolio</a></li>
+                <li><a href="#testimonial" class="link-item outer-shadow hover-in-shadow">Testimonials</a></li>
+                <li><a href="#contact" class="link-item outer-shadow hover-in-shadow">Contact</a></li>
             </ul>
         </div>
         <!--copyright text-->
         <p class="copyright-text">&copy; 2021 Jaintra</p>
     </nav>
+    <div class="fade-out-effect"></div>
+    
     <!--Navigation Menu ends-->
 
     <!--home section starts-->
-    <section class="home-section section">
+    <section class="home-section section active" id="home">
         <!---Effect wrap starts -->
         <div  class="effect-wrap">
             <div class="effect effect-1">
@@ -78,7 +90,7 @@
                     <p>Hello</p>
                     <h2>I'm Jaintra</h2>
                     <h1>Web Designer & Developer</h1>
-                    <a href="#" class="btn-1 outer-shadow hover-in-shadow">More About Me</a>
+                    <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">More About Me</a>
                 </div>
                 <div class="home-img">
                     <div class="img-box inner-shadow">
@@ -91,7 +103,7 @@
     <!--home section end-->
     
     <!--about section starts-->
-    <section class="about-section section">
+    <section class="about-section section" id="about">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -130,7 +142,7 @@
                     Et, nisi.</p>
                     <a href="resume.pdf" class="btn-1 outer-shadow hover-in-shadow">
                     Download Resume</a>
-                    <a href="#" class="btn-1 outer-shadow hover-in-shadow">
+                    <a href="#contact" class="link-item btn-1 outer-shadow hover-in-shadow">
                     Hire Me</a>
                 </div>
             </div>
@@ -315,7 +327,7 @@
     <!--about section ends-->
 
     <!-- Services section starts -->
-    <section class="service-section section">
+    <section class="service-section section" id="services">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -391,7 +403,7 @@
     <!-- Services section ends -->
 
     <!-- Portfolio Section starts -->
-    <section class="portfolio-section section">
+    <section class="portfolio-section section" id="portfolio"> 
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -689,7 +701,7 @@
     <!-- Portfolio Section ends -->
     
     <!-- Testimonial section starts -->
-    <section class="testimonial-section section">
+    <section class="testimonial-section section" id="testimonial">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -741,7 +753,7 @@
     <!-- Testimonial section ends -->
 
     <!-- Contact Section Starts -->
-    <section class="contact-section section">
+    <section class="contact-section section" id="contact">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -775,22 +787,22 @@
             </div>
             <div class="row">
                 <div class="contact-form">
-                    <form>
+                    <form action="database/contact.php" method="POST">
                         <div class="row">
                             <div class="w-50">
                                 <div class="input-group outer-shadow hover-in-shadow">
-                                    <input type="text" placeholder="Name" class="input-control">
+                                    <input name="name" type="text" placeholder="Name" class="input-control" required>
                                 </div>
                                 <div class="input-group outer-shadow hover-in-shadow">
-                                    <input type="email" placeholder="Email" class="input-control">
+                                    <input name="email" type="email" placeholder="Email" class="input-control" required>
                                 </div>
                                 <div class="input-group outer-shadow hover-in-shadow">
-                                    <input type="text" placeholder="Subject" class="input-control">
+                                    <input name="subject" type="text" placeholder="Subject" class="input-control" required>
                                 </div>
                             </div>
                             <div class="w-50">
                                 <div class="input-group outer-shadow hover-in-shadow">
-                                    <textarea class="input-control" placeholder="Message"></textarea>
+                                    <textarea name="message" class="input-control" placeholder="Message"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -811,26 +823,10 @@
         <div class="pp-details">
             <div class="pp-details-inner">
                 <div class="pp-title">
-                <h2>personal portfolio</h2>
-                <p>Category- <span class="pp-project-category">Web Application</span></p>
+                <h2></h2>
+                <p>Category- <span class="pp-project-category"></span></p>
                 </div>
                 <div class="pp-project-details">
-                    <div class="row">
-                        <div class="description">
-                            <h3>Project Brief:</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic fugit eligendi autem iusto Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus adipisci optio, fuga impedit aliquid eos beatae error quibusdam iusto cumque nisi rem cupiditate vel odio amet, corrupti dolore molestias et!.</p>
-                        </div>
-                        <div class="info">
-                            <h3>Project Info</h3>
-                            <ul>
-                                <li>Date - <span>2020</span></li>
-                                <li>Clients - <span>xyz</span></li>
-                                <li>Tools - <span>html, css, javascript</span></li>
-                                <li>Web - <span><a href="#"> www.domain.com</a></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
@@ -842,7 +838,7 @@
                 <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details <i class="fas fa-plus"></i></div>
                 <div class="pp-close outer-shadow hover-in-shadow">&times;</div>
                 <img src="img/portfolio/large/project-1/1.png" alt="image" class="pp-img outer-shadow">
-                <div class="pp-counter">1 of 6</div>
+                <div class="pp-counter"></div>
             </div>
             <div class="pp-loader">
                 <div></div>
@@ -854,8 +850,30 @@
     </div>
     <!-- portfolio popup ends -->
 
+    <!-- style switcher starts-->
+    <div class="style-switcher outer-shadow">
+        <div class="style-switcher-toggler s-icon outer-shadow hover-in-shadow">
+            <i class="fas fa-cog fa-spin">
+            </i>
+        </div>
+        <div class="day-night s-icon outer-shadow hover-in-shadow">
+            <i class="fas"></i>
+        </div>
+        <h4>Theme Colors</h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+        </div>
+    </div>
+    <!-- style switcher ends-->
+
 <!-- main js -->
 <script src="js/main.js"></script>
+<!-- style switcher js -->
+<script src="js/style-switcher.js"></script>
 </body>
 </html>
 
